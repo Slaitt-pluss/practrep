@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web Lista para Imágenes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contenedor-principal {
+            width: 100%;
+            max-width: 1200px;
+            background-color: #f7f4f4;
+            border: 2px solid #333;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* IMAGEN PRINCIPAL */
+        .imagen-principal {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 10px;
+            background-color: blue;
+        }
+
+        .imagen-principal img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* MENÚ */
+        .menu-botones {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .menu-botones button {
+            padding: 10px 20px;
+            background-color: #e0e0e0;
+            border: 1px solid #777;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* CONTENEDOR CENTRAL */
+        .seccion-contenedores {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+
+        .seccion-contenedores h3 {
+            margin-bottom: 20px;
+        }
+
+        .grid-4-imagenes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .tarjeta-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        /* IMÁGENES PEQUEÑAS */
+        .caja-imagen {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 0;
+            background-color: #e5e5e5;
+        }
+
+        .caja-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* PIE DE PÁGINA */
+        .pie-pagina {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            background-color: #eee;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .pie-pagina a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .pie-pagina a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor-principal">
+
+        <!-- 1. IMAGEN PRINCIPAL -->
+        <div class="imagen-principal">
+            <img src="../imgOrig/0G0AoMI-nissan-350z-wallpaper.jpg" alt="Imagen principal">
+        </div>
+
+        <!-- 2. MENÚ -->
+        <div class="menu-botones">
+            <button>Inicio</button>
+            <button>Servicios</button>
+            <button>Contacto</button>
+        </div>
+
+        <!-- 3. CONTENEDOR CENTRAL -->
+        <div class="seccion-contenedores">
+
+            <h3>Contenedor de Elementos</h3>
+
+            <div class="grid-4-imagenes">
+
+                <!-- Imagen 1 -->
+                <div class="tarjeta-item">
+                    <div class="caja-imagen">
+                        <img src="../imgOrig/uwp3854757.jpeg" alt="Imagen 1">
+                    </div>
+                </div>
+
+                <!-- Imagen 2 -->
+                <div class="tarjeta-item">
+                    <div class="caja-imagen">
+                        <img src="../imgOrig/uwp4957096.jpeg" alt="Imagen 2">
+                    </div>
+                </div>
+
+                <!-- Imagen 3 -->
+                <div class="tarjeta-item">
+                    <div class="caja-imagen">
+                        <img src="../imgOrig/uwp5029249.jpeg" alt="Imagen 3">
+                    </div>
+                </div>
+
+                <!-- Imagen 4 -->
+                <div class="tarjeta-item">
+                    <div class="caja-imagen">
+                        <img src="../imgOrig/wp9200473-vocho-wallpapers.jpg" alt="Imagen 4">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 4. PIE DE PÁGINA -->
+        <div class="pie-pagina">
+
+            <a href="www.youtube.com">youtube</a>
+            <a href="www.facebook.com">facebook</a>
+            <a href="www.google.com">google</a>
+
+        </div>
+
+        
+    </div>
+
+</body>
+</html>
