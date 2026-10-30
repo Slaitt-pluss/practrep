@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Web Lista para Imágenes</title>
+    <title>Galería de Automóviles</title>
 
     <style>
         body {
@@ -29,7 +30,7 @@
             width: 100%;
             height: 400px;
             margin-bottom: 10px;
-            background-color: blue;
+            overflow: hidden;
         }
 
         .imagen-principal img {
@@ -42,7 +43,7 @@
         /* MENÚ */
         .menu-botones {
             display: flex;
-            justify-content: flex-start;
+            flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 15px;
         }
@@ -53,6 +54,11 @@
             border: 1px solid #777;
             cursor: pointer;
             font-size: 14px;
+        }
+
+        .menu-botones button:hover {
+            background-color: #333;
+            color: white;
         }
 
         /* CONTENEDOR CENTRAL */
@@ -67,9 +73,10 @@
             margin-bottom: 20px;
         }
 
+        /* CUADRÍCULA DE IMÁGENES */
         .grid-4-imagenes {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 15px;
         }
 
@@ -80,11 +87,10 @@
             text-align: center;
         }
 
-        /* IMÁGENES PEQUEÑAS */
         .caja-imagen {
             width: 100%;
-            height: 120px;
-            margin-bottom: 0;
+            height: 180px;
+            overflow: hidden;
             background-color: #e5e5e5;
         }
 
@@ -93,12 +99,26 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: transform 0.3s;
+        }
+
+        .caja-imagen img:hover {
+            transform: scale(1.05);
+        }
+
+        .tarjeta-item h4 {
+            margin: 12px 0 5px;
+        }
+
+        .tarjeta-item p {
+            color: #555;
+            font-size: 14px;
         }
 
         /* PIE DE PÁGINA */
         .pie-pagina {
             display: flex;
-            justify-content: flex-start;
+            flex-wrap: wrap;
             gap: 20px;
             background-color: #eee;
             padding: 15px;
@@ -114,6 +134,25 @@
         .pie-pagina a:hover {
             text-decoration: underline;
         }
+
+        /* DISEÑO PARA CELULARES */
+        @media (max-width: 600px) {
+            body {
+                padding: 8px;
+            }
+
+            .imagen-principal {
+                height: 220px;
+            }
+
+            .grid-4-imagenes {
+                grid-template-columns: 1fr;
+            }
+
+            .caja-imagen {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -123,65 +162,90 @@
 
         <!-- 1. IMAGEN PRINCIPAL -->
         <div class="imagen-principal">
-            <img src="../imgOrig/0G0AoMI-nissan-350z-wallpaper.jpg" alt="Imagen principal">
+            <img
+                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85"
+                alt="Automóvil deportivo"
+            >
         </div>
 
         <!-- 2. MENÚ -->
         <div class="menu-botones">
-            <button>Inicio</button>
-            <button>Servicios</button>
-            <button>Contacto</button>
+            <button onclick="location.href='#inicio'">Inicio</button>
+            <button onclick="location.href='#galeria'">Galería</button>
+            <button onclick="location.href='#contacto'">Contacto</button>
         </div>
 
         <!-- 3. CONTENEDOR CENTRAL -->
-        <div class="seccion-contenedores">
+        <div class="seccion-contenedores" id="galeria">
 
-            <h3>Contenedor de Elementos</h3>
+            <h3>Galería de Automóviles</h3>
 
             <div class="grid-4-imagenes">
 
                 <!-- Imagen 1 -->
                 <div class="tarjeta-item">
                     <div class="caja-imagen">
-                        <img src="../imgOrig/uwp3854757.jpeg" alt="Imagen 1">
+                        <img
+                            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=85"
+                            alt="Automóvil deportivo"
+                            loading="lazy"
+                        >
                     </div>
+                    <h4>Autos deportivos</h4>
+                    <p>Diseño y velocidad.</p>
                 </div>
 
                 <!-- Imagen 2 -->
                 <div class="tarjeta-item">
                     <div class="caja-imagen">
-                        <img src="../imgOrig/uwp4957096.jpeg" alt="Imagen 2">
+                        <img
+                            src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=85"
+                            alt="Automóvil clásico"
+                            loading="lazy"
+                        >
                     </div>
+                    <h4>Autos clásicos</h4>
+                    <p>Estilo que nunca pasa de moda.</p>
                 </div>
 
                 <!-- Imagen 3 -->
                 <div class="tarjeta-item">
                     <div class="caja-imagen">
-                        <img src="../imgOrig/uwp5029249.jpeg" alt="Imagen 3">
+                        <img
+                            src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=85"
+                            alt="Automóvil de lujo"
+                            loading="lazy"
+                        >
                     </div>
+                    <h4>Autos de lujo</h4>
+                    <p>Elegancia y comodidad.</p>
                 </div>
 
                 <!-- Imagen 4 -->
                 <div class="tarjeta-item">
                     <div class="caja-imagen">
-                        <img src="../imgOrig/wp9200473-vocho-wallpapers.jpg" alt="Imagen 4">
+                        <img
+                            src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=85"
+                            alt="Automóvil en carretera"
+                            loading="lazy"
+                        >
                     </div>
+                    <h4>Autos modernos</h4>
+                    <p>Tecnología e innovación.</p>
                 </div>
 
             </div>
         </div>
 
         <!-- 4. PIE DE PÁGINA -->
-        <div class="pie-pagina">
-
-            <a href="www.youtube.com">youtube</a>
-            <a href="www.facebook.com">facebook</a>
-            <a href="www.google.com">google</a>
-
+        <div class="pie-pagina" id="contacto">
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Google</a>
         </div>
 
-        
     </div>
 
 </body>
 </html>
+```
